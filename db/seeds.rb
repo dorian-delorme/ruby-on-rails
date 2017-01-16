@@ -10,3 +10,8 @@
 	Article.create({content: "Article numéro #{i}"})
 	puts "Creating article #{i}"
 end
+
+10.times do |i|
+	Chapter.create({title: "Chapitre #{i}"})
+	puts "Creating chapter #{i}"
+end
