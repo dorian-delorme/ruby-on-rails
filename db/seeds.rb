@@ -6,16 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-5.times do |i|
+3.times do |i|
 
 	puts "Creating Chapter #{i}"
-	chapter = Chapter.create({title: "Chapitre numéro #{i}",
+	main_chapter = Chapter.create({title: "Grand chapitre #{i}",
 							  published_at: Time.now})
 
-	10.times do |j|
+	5.times do |j|
 
-		puts "	Creating Articles #{j} for chapter #{i}"
-		chapter.articles.create({content: "Contenu de l'article #{j} pour le chapitre #{i}"})
+		puts "Creating SubChapter #{j} from chapter #{i}"
+		chapter = main_chapter.children.create({title: "Sous-chapitre #{j}",
+								published_at: Time.now})
+
+		10.times do |k|
+
+			puts "	Creating Articles #{k} for chapter #{i}"
+			chapter.articles.create({content: "Contenu de l'article #{k} pour le chapitre #{i}"})
+
+		end
 
 	end
 

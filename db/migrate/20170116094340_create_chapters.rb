@@ -4,7 +4,7 @@ class CreateChapters < ActiveRecord::Migration[5.0]
       t.string   :title
       t.datetime :published_at
 
-      t.references :chapter
+      t.integer :parent_id
 
       t.timestamps
     end
