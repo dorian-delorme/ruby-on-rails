@@ -14,13 +14,13 @@
 
 	5.times do |j|
 
-		puts "Creating SubChapter #{j} from chapter #{i}"
+		puts "	Creating SubChapter #{j} from chapter #{i}"
 		chapter = main_chapter.children.create({title: "Sous-chapitre #{j}",
 								published_at: Time.now})
 
 		10.times do |k|
 
-			puts "	Creating Articles #{k} for chapter #{i}"
+			puts "		Creating Articles #{k} for chapter #{i}"
 			chapter.articles.create({content: "Contenu de l'article #{k} pour le chapitre #{i}"})
 
 		end

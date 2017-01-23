@@ -1,12 +1,1 @@
-<table>
-	<tr>
-		<td>#</td>
-		<td>content</td>
-	</tr>
-	<% @chapters.each do |chapter|%>
-	<tr>
-		<td><%= chapter.id%></td>
-		<td><%= chapter.content[0..255]%></td>
-	</tr>
-	<% end %>
-</table>
+<%= render @chapters %>
